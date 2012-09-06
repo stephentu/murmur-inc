@@ -25,4 +25,15 @@ private:
   size_t _len;
 };
 
+class murmur_inc64 {
+public:
+  murmur_inc64(uint32_t seed = 0);
+  void hash(const void *key, size_t len);
+  void finalize(void *out);
+private:
+  uint64_t _h1;
+  uint64_t _h2;
+  size_t _len;
+};
+
 #endif /* _MURMURINC_H_ */
